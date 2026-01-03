@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie photos – Le Jardin habité de Saint Georges</title>
+  <meta name="description" content="Galerie photos du Jardin habité de Saint Georges : sculptures contemporaines, arbres et ambiances du jardin.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #388e3c;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1, h2 {
+      color: #2E7D32;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Galerie photos</h1>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="plan.html">Plan d’accès</a>
+</nav>
+
+<main>
+  <h2>Le Jardin habité de Saint Georges</h2>
+  <p>
+    Découvrez quelques vues du jardin, ses sculptures et ses ambiances au fil des saisons.
+  </p>
+
+  <div class="gallery">
+    <img src="images/charpentier.jpg" alt="Sculpture de Michel Charpentier dans le jardin">
+    <img src="images/bernardfourche.jpg" alt="Sculpture de Bernard Fourche dans le jardin">
+    <img src="images/mpetit.jpg" alt="Sculpture de Marc Petit dans le jardin">
+    <!-- Ajoute d'autres images ici -->
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Le Jardin habité de Saint Georges</p>
+</footer>
+
+</body>
+</html>
