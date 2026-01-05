@@ -13,12 +13,14 @@
       background: #fafafa;
       color: #333;
     }
+
     header {
       background: #4caf50;
       color: white;
       padding: 1rem;
       text-align: center;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -26,37 +28,50 @@
       background: #388e3c;
       padding: 0.5rem;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* >>> CONTENEUR CENTRAL <<< */
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
     }
-    h1, h2 {
+
+    h1, h2, h3 {
       color: #2E7D32;
     }
+
+    .rubrique {
+      margin-top: 3rem;
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
+
     .gallery img {
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
       background: #eee;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -69,22 +84,24 @@
   <a href="plan.html">Plan d’accès</a>
 </nav>
 
- <h2>Galerie du Jardin habité de Saint Georges</h2>
+<main>
+
+  <h2>Galerie du Jardin habité de Saint Georges</h2>
   <p>
     Le jardin évolue au fil des saisons et accueille différentes essences et sculptures.
   </p>
 
-   <!-- ECORCES DE BOULEAU -->
+  <!-- ECORCES DE BOULEAU -->
   <section class="rubrique">
     <h3>Vues d'écorce de bouleau</h3>
     <div class="gallery">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau1.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau2.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau3.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau4.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau5.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau6.jpg" alt="plan d'écorcen">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau7.jpg" alt="plan d'écorcen">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau1.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau2.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau3.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau4.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau5.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau6.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau7.jpg" alt="Écorce de bouleau">
     </div>
   </section>
 
@@ -96,9 +113,11 @@
       <img src="images/sculptures/mpetit.jpg" alt="Sculpture de Marc Petit dans le jardin">
       <img src="images/sculptures/rvincentmousse.jpg" alt="Sculpture de Roland Vincent dans le jardin">
       <img src="images/sculptures/mgasc.jpg" alt="Sculpture de Matthieu Gasc dans le jardin">
-        <img src="images/sculptures/clapie.jpg" alt="Sculpture de Christian Lapie dans le jardin">
+      <img src="images/sculptures/clapie.jpg" alt="Sculpture de Christian Lapie dans le jardin">
     </div>
   </section>
+
+</main>
 
 <footer>
   <p>&copy; Le Jardin habité de Saint Georges</p>
