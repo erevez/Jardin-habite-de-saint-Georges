@@ -69,6 +69,35 @@
       margin-top: 3rem;
       background: #eee;
     }
+
+    .lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 8px;
+}
+
+.lightbox-overlay span {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
   </style>
 </head>
 
@@ -97,13 +126,13 @@
   <section class="rubrique">
     <h3>Vues d'écorce de bouleau</h3>
     <div class="gallery">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau1.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau2.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau3.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau4.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau5.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau6.jpg" alt="Écorce de bouleau">
-      <img src="images/ecorce-de-bouleau/ecorcebouleau7.jpg" alt="Écorce de bouleau">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau1.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau2.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau3.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau4.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau5.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau6.jpg" alt="Écorce de bouleau" class="lightbox-img">
+      <img src="images/ecorce-de-bouleau/ecorcebouleau7.jpg" alt="Écorce de bouleau" class="lightbox-img">
     </div>
   </section>
 
@@ -111,13 +140,13 @@
   <section class="rubrique">
     <h3>Sculptures</h3>
     <div class="gallery">
-      <img src="images/sculptures/charpentier.jpg" alt="Sculpture de Michel Charpentier dans le jardin">
-      <img src="images/sculptures/mpetit.jpg" alt="Sculpture de Marc Petit dans le jardin">
-      <img src="images/sculptures/rvincentmousse.jpg" alt="Sculpture de Roland Vincent dans le jardin">
-      <img src="images/sculptures/mgasc.jpg" alt="Sculpture de Matthieu Gasc dans le jardin">
-      <img src="images/sculptures/clapie.jpg" alt="Sculpture de Christian Lapie dans le jardin">
-      <img src="images/sculptures/charpentierneige.jpg" alt="Sculpture de Michel Charpentier sous la neige">
-      <img src="images/sculptures/amouretteneige.jpg" alt="Sculpture de Pierre Amourette sous la neige">
+      <img src="images/sculptures/charpentier.jpg" alt="Sculpture de Michel Charpentier dans le jardin" class="lightbox-img">
+      <img src="images/sculptures/mpetit.jpg" alt="Sculpture de Marc Petit dans le jardin" class="lightbox-img">
+      <img src="images/sculptures/rvincentmousse.jpg" alt="Sculpture de Roland Vincent dans le jardin" class="lightbox-img">
+      <img src="images/sculptures/mgasc.jpg" alt="Sculpture de Matthieu Gasc dans le jardin" class="lightbox-img">
+      <img src="images/sculptures/clapie.jpg" alt="Sculpture de Christian Lapie dans le jardin" class="lightbox-img">
+      <img src="images/sculptures/charpentierneige.jpg" alt="Sculpture de Michel Charpentier sous la neige" class="lightbox-img">
+      <img src="images/sculptures/amouretteneige.jpg" alt="Sculpture de Pierre Amourette sous la neige" class="lightbox-img">
     </div>
   </section>
 
@@ -126,6 +155,36 @@
 <footer>
   <p>&copy; Le Jardin habité de Saint Georges</p>
 </footer>
+<script>
+  const images = document.querySelectorAll('.lightbox-img');
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+
+  const overlayImg = document.createElement('img');
+  const closeBtn = document.createElement('span');
+  closeBtn.innerHTML = '&times;';
+
+  overlay.appendChild(overlayImg);
+  overlay.appendChild(closeBtn);
+  document.body.appendChild(overlay);
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      overlayImg.src = img.src;
+      overlay.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
