@@ -176,20 +176,27 @@
 </footer>
 <script>
   const images = document.querySelectorAll('.lightbox-img');
+
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
 
   const overlayImg = document.createElement('img');
+  const caption = document.createElement('div');
+  caption.className = 'lightbox-caption';
+
   const closeBtn = document.createElement('span');
+  closeBtn.className = 'lightbox-close';
   closeBtn.innerHTML = '&times;';
 
-  overlay.appendChild(overlayImg);
   overlay.appendChild(closeBtn);
+  overlay.appendChild(overlayImg);
+  overlay.appendChild(caption);
   document.body.appendChild(overlay);
 
   images.forEach(img => {
     img.addEventListener('click', () => {
       overlayImg.src = img.src;
+      caption.textContent = img.dataset.title || img.alt;
       overlay.style.display = 'flex';
     });
   });
@@ -204,6 +211,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>
